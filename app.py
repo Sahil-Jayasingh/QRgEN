@@ -6,6 +6,9 @@ app=Flask(__name__)
 from flask_cors import CORS #browser gate opening
 CORS(app)
 
+@app.route('/')
+def home():
+    return send_file('index.html')
 @app.route('/generate')
 def generate_qr():
     url = request.args.get('url')
