@@ -10,7 +10,8 @@ CORS(app)
 def home():
     return send_file('index.html')
 @app.route('/generate')
-def generate_qr():
+
+def generate_qr():#QR
     url = request.args.get('url')
     qr = qrcode.QRCode()
     qr.add_data(url)
